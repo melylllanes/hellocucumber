@@ -1,5 +1,7 @@
 package hellocucumber;
 
+import java.io.IOException;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -7,7 +9,7 @@ import io.cucumber.java.en.When;
 public class StepDefinitions {
 	static {
 //		 System.setProperty("java.library.path","/home/ubuntu/hellocucumber");
-	     System.load("/home/ubuntu/hellocucumber/calculator2-exe");
+//	     System.load("C:\\calculator2-exe");
 	}
 
 	static native void calculator(Integer number1, Integer number2, String operacion);
@@ -37,9 +39,17 @@ public class StepDefinitions {
 	}
 	@Then("I should obtain this result")
 	public void i_should_obtain_this_result() {
-	    // Write code here that turns the phrase above into concrete actions
-	    //throw new io.cucumber.java.PendingException();
-		calculator(number1, number2, operacion);
+	    
+		ProcessBuilder p = new ProcessBuilder();
+        System.out.println("Started EXE");
+        p.command("/home/ubuntu/hellocucumber/calculator2-exe 12 12 \"a\"  ");   
+        try {
+			p.start();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		calculator(number1, number2, operacion);
 		System.out.println("TERMINO LLAMADA UTILIZANDO LOAD ... ");
 //		Runtime runTime = Runtime.getRuntime();
 //		try {
