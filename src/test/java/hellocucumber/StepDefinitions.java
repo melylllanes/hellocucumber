@@ -42,7 +42,7 @@ public class StepDefinitions {
 	    
 		ProcessBuilder p = new ProcessBuilder();
         System.out.println("Started EXE");
-        String command = "/home/ubuntu/hellocucumber/./calculator2-exe";
+        String command = "/home/ubuntu/hellocucumber/./calculator2-exe 12 12 \"a\"";
         p.command(command);   
         try {
 			p.start();
