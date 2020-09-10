@@ -1,6 +1,8 @@
 package hellocucumber;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -46,11 +48,14 @@ public class StepDefinitions {
 		Runtime runTime = Runtime.getRuntime();
 		try {
 			Process p = runTime.exec("./calculator2-exe 12 12 \"a\" ");
-			int data = p.getInputStream().read();
-			while(data != -1) {
-				System.out.println(data);
-			}
-//			System.out.println("VALOR DE SALIDA ...." + salida);
+			BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(p.getInputStream()));
+			String line = null;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+            reader.close();
+
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
