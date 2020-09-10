@@ -47,7 +47,7 @@ public class StepDefinitions {
 		//calculadora(number1, number2, operacion);
 		Runtime runTime = Runtime.getRuntime();
 		try {
-			Process p = runTime.exec("./calculator2-exe 12 12 \"a\" ");
+			Process p = runTime.exec("./calculator2-exe");
 			BufferedReader reader = new BufferedReader(
                     new InputStreamReader(p.getInputStream()));
 			String line = null;
