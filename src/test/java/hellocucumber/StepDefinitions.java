@@ -10,7 +10,7 @@ public class StepDefinitions {
 	     System.load("/home/ubuntu/hellocucumber/calculator2-exe");
 	}
 
-	static native int calculator(Integer number1, Integer number2, String operacion);
+	static native void calculator(Integer number1, Integer number2, String operacion);
 	
 	public Integer number1;
 	public Integer number2;
