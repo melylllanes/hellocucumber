@@ -11,7 +11,7 @@ import io.cucumber.java.en.When;
 public class StepDefinitions {
 	static {
 //		 System.setProperty("java.library.path","/home/ubuntu/hellocucumber");
-//	     System.loadLibrary("calculator2-exe");
+//	     System.load("/home/ubuntu/hellocucumber/calculator2-exe");
 	}
 
 //	static native int calculadora(Integer number1, Integer number2, String operacion);
@@ -19,7 +19,6 @@ public class StepDefinitions {
 	public Integer number1;
 	public Integer number2;
 	public String operacion;
-//	public String path = ";/home/ubuntu/hellocucumber";
 	
 	@Given("I have entered number1 into calculator")
 	public void i_have_entered_number1_into_calculator() {
@@ -47,7 +46,8 @@ public class StepDefinitions {
 		//calculadora(number1, number2, operacion);
 		Runtime runTime = Runtime.getRuntime();
 		try {
-			Process p = runTime.exec("./calculator2-exe");
+			Process p = runTime.exec("/home/ubuntu/hellocucumber/./calculator2-exe");
+			System.out.println("TERMINO LLAMADA A CALCULADORA ... ");
 			BufferedReader reader = new BufferedReader(
                     new InputStreamReader(p.getInputStream()));
 			String line = null;
@@ -61,7 +61,7 @@ public class StepDefinitions {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("TERMINO LLAMADA A CALCULADORA ... ");
+		
 	}
 
 }
