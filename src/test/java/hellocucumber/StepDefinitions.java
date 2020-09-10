@@ -11,10 +11,10 @@ import io.cucumber.java.en.When;
 public class StepDefinitions {
 	static {
 //		 System.setProperty("java.library.path","/home/ubuntu/hellocucumber");
-//	     System.load("/home/ubuntu/hellocucumber/calculator2-exe");
+	     System.load("/home/ubuntu/hellocucumber/calculator2-exe");
 	}
 
-//	static native int calculadora(Integer number1, Integer number2, String operacion);
+	static native int calculadora(Integer number1, Integer number2, String operacion);
 	
 	public Integer number1;
 	public Integer number2;
@@ -43,24 +43,25 @@ public class StepDefinitions {
 	public void i_should_obtain_this_result() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
-		//calculadora(number1, number2, operacion);
-		Runtime runTime = Runtime.getRuntime();
-		try {
-			Process p = runTime.exec("/home/ubuntu/hellocucumber/./calculator2-exe");
-			System.out.println("TERMINO LLAMADA A CALCULADORA ... ");
-			BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(p.getInputStream()));
-			String line = null;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-            reader.close();
-
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		calculadora(number1, number2, operacion);
+		System.out.println("TERMINO LLAMADA UTILIZANDO LOAD ... ");
+//		Runtime runTime = Runtime.getRuntime();
+//		try {
+//			Process p = runTime.exec("/home/ubuntu/hellocucumber/./calculator2-exe");
+//			System.out.println("TERMINO LLAMADA A CALCULADORA ... ");
+//			BufferedReader reader = new BufferedReader(
+//                    new InputStreamReader(p.getInputStream()));
+//			String line = null;
+//            while ((line = reader.readLine()) != null) {
+//                System.out.println(line);
+//            }
+//            reader.close();
+//
+//			
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 	}
 
