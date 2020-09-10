@@ -1,5 +1,6 @@
 package hellocucumber;
 
+import java.io.File;
 import java.io.IOException;
 
 import io.cucumber.java.en.Given;
@@ -42,9 +43,10 @@ public class StepDefinitions {
 	    
 		ProcessBuilder p = new ProcessBuilder();
         System.out.println("Started EXE");
-        String command = "/home/ubuntu/hellocucumber/./calculator2-exe 12 12 \"a\"";
-        p.command(command);   
+        String command = "/home/ubuntu/hellocucumber/./calculator2-exe 12 12 'a'";
+        //p.command(command);   
         try {
+        	p.directory(new File(command));
 			p.start();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
