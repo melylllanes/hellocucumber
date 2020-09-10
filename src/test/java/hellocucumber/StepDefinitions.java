@@ -1,9 +1,5 @@
 package hellocucumber;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,7 +10,7 @@ public class StepDefinitions {
 	     System.load("/home/ubuntu/hellocucumber/calculator2-exe");
 	}
 
-	static native int calculadora(Integer number1, Integer number2, String operacion);
+	static native int calculator(Integer number1, Integer number2, String operacion);
 	
 	public Integer number1;
 	public Integer number2;
@@ -43,7 +39,7 @@ public class StepDefinitions {
 	public void i_should_obtain_this_result() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
-		calculadora(number1, number2, operacion);
+		calculator(number1, number2, operacion);
 		System.out.println("TERMINO LLAMADA UTILIZANDO LOAD ... ");
 //		Runtime runTime = Runtime.getRuntime();
 //		try {
