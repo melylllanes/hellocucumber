@@ -45,7 +45,8 @@ public class StepDefinitions {
 		//calculadora(number1, number2, operacion);
 		Runtime runTime = Runtime.getRuntime();
 		try {
-			runTime.exec("./calculator2-exe 12 12 \"a\" ");
+			int salida = runTime.exec("./calculator2-exe 12 12 \"a\" ").exitValue();
+			System.out.println("VALOR DE SALIDA ...." + salida);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
