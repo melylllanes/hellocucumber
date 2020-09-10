@@ -1,21 +1,23 @@
 package hellocucumber;
 
+import java.io.IOException;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class StepDefinitions {
 	static {
-		 System.setProperty("java.library.path","/home/ubuntu/hellocucumber");
-	     System.loadLibrary("calculator2-exe");
+//		 System.setProperty("java.library.path","/home/ubuntu/hellocucumber");
+//	     System.loadLibrary("calculator2-exe");
 	}
 
-	static native int calculadora(Integer number1, Integer number2, String operacion);
+//	static native int calculadora(Integer number1, Integer number2, String operacion);
 	
 	public Integer number1;
 	public Integer number2;
 	public String operacion;
-	public String path = ";/home/ubuntu/hellocucumber";
+//	public String path = ";/home/ubuntu/hellocucumber";
 	
 	@Given("I have entered number1 into calculator")
 	public void i_have_entered_number1_into_calculator() {
@@ -40,7 +42,15 @@ public class StepDefinitions {
 	public void i_should_obtain_this_result() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
-		calculadora(number1, number2, operacion);
+		//calculadora(number1, number2, operacion);
+		Runtime runTime = Runtime.getRuntime();
+		try {
+			runTime.exec("./calculator2-exe 12 12 \"a\" ");
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println("TERMINO LLAMADA A CALCULADORA ... ");
 	}
 
