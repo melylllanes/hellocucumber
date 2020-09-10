@@ -59,7 +59,7 @@ public class StepDefinitions {
 			e.printStackTrace();
 		}
 		System.out.println("TERMINO LLAMADA UTILIZANDO LOAD ... ");
-		assertEquals(int1, new Integer(line));
+		assertEquals(int1, new Integer(Integer.parseInt(line)));
 	}
 
 }
