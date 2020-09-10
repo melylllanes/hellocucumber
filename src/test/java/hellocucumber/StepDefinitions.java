@@ -52,6 +52,7 @@ public class StepDefinitions {
 			
           while ((line = reader.readLine()) != null) {
               System.out.println(line);
+              assertEquals(int1, new Integer(Integer.parseInt(line)));
           }
           reader.close();
           
@@ -59,7 +60,7 @@ public class StepDefinitions {
 			e.printStackTrace();
 		}
 		System.out.println("TERMINO LLAMADA UTILIZANDO LOAD ... ");
-		assertEquals(int1, new Integer(Integer.parseInt(line)));
+		
 	}
 
 }
