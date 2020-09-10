@@ -2,6 +2,8 @@ package hellocucumber;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -41,9 +43,15 @@ public class StepDefinitions {
 	@Then("I should obtain this result")
 	public void i_should_obtain_this_result() {
 	    
-		ProcessBuilder p = new ProcessBuilder();
+		List<String> argumentos = new ArrayList<String>();
+		argumentos.add("calculator2-exe");
+		argumentos.add("12");
+		argumentos.add("12");
+		argumentos.add("a");
+		
+		ProcessBuilder p = new ProcessBuilder(argumentos);
         System.out.println("Started EXE");
-        String command = "/home/ubuntu/hellocucumber/./calculator2-exe 12 12 'a'";
+        String command = "/home/ubuntu/hellocucumber/";
         //p.command(command);   
         try {
         	p.directory(new File(command));
