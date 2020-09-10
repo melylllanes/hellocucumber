@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 
 public class StepDefinitions {
 	static {
+		 System.setProperty("java.library.path","/home/ubuntu/hellocucumber");
 	     System.loadLibrary("calculator2-exe");
 	}
 
@@ -14,7 +15,8 @@ public class StepDefinitions {
 	public Integer number1;
 	public Integer number2;
 	public String operacion;
-
+	public String path = ";/home/ubuntu/hellocucumber";
+	
 	@Given("I have entered number1 into calculator")
 	public void i_have_entered_number1_into_calculator() {
 	    // Write code here that turns the phrase above into concrete actions
