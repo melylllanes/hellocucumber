@@ -32,8 +32,8 @@ public class StepDefinitions {
 		operacion = string;
 	}
 	
-	@Then("I should be {int}")
-	public void i_should_obtain(Double int1) {
+	@Then("I should be {double}")
+	public void i_should_be(Double double1) {
 	    
 		List<String> argumentos = new ArrayList<String>();
 		argumentos.add("calculator2-exe");
@@ -52,7 +52,7 @@ public class StepDefinitions {
 			
           while ((line = reader.readLine()) != null) {
               System.out.println(line);
-              assertEquals(int1, new Double(Double.parseDouble(line)));
+              assertEquals(double1, new Double(Double.parseDouble(line)));
           }
           reader.close();
           
