@@ -51,7 +51,6 @@ public class StepDefinitions {
                   new InputStreamReader(p.start().getInputStream()));
 			
           while ((line = reader.readLine()) != null) {
-              System.out.println(line);
               assertEquals(double1, new Double(Double.parseDouble(line)));
           }
           reader.close();
@@ -59,7 +58,6 @@ public class StepDefinitions {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println("TERMINO LLAMADA UTILIZANDO LOAD ... ");
 		
 	}
 
